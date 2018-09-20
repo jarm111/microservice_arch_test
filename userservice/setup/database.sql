@@ -1,0 +1,13 @@
+CREATE DATABASE IF NOT EXISTS userservice;
+USE userservice;
+
+DROP TABLE IF EXISTS Users;
+
+
+CREATE TABLE IF NOT EXISTS Users (
+  customer_id VARCHAR(100) NOT NULL PRIMARY KEY,
+  firstname VARCHAR(30) NOT NULL,
+  lastname VARCHAR(50) NOT NULL,
+  email VARCHAR(50) UNIQUE NOT NULL,
+  password VARCHAR(100)
+);
