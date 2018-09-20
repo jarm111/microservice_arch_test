@@ -19,6 +19,7 @@
     "express-http-proxy": "^1.4.0",
     "request": "^2.88.0",
     "request-promise-native": "^1.0.5",
-    "require": "^2.4.20"
+    "require": "^2.4.20",
+    "uglify-js": "^3.4.9"
   }
 }
