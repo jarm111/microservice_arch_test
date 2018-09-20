@@ -8,10 +8,19 @@ NodeJS and MySQL/MariaDB
 ## Setup
 1. Clone the repository 
 2. install NodeJS and database software of your choosing. 
-3. Throw the SQL script to your database. 
-4. Open up a Powershell/CMD/Bash/Whatever and do `npm install`
-5. Run the services with Node 
-6. Be happy 
+3. Throw the SQL script to your database from the relevant microservice. 
+4. Create .env file
+* It looks like this
+    * DB_USER=
+    * DB_PASSWORD=
+    * DB_DATABASE=
+    * DB_HOST_DEV=
+    * DB_DIALECT=mysql
+    * PORT=
+    * JWT_SECRET=
+5. Open up a Powershell/CMD/Bash/Whatever and do `npm install`
+6. Run the services with Node 
+7. Be happy 
 
 
  
