@@ -1,11 +1,11 @@
-#Sample app showing how microservice architecture works. 
+# Sample app showing how microservice architecture works. 
 
 At the moment its just a prototype combining a gateway (gatewayservice) and a user service (userservice) for registering and authenticating users with JWT for the hypothetical app to come. 
 
-##Requirements
+## Requirements
 NodeJS and MySQL/MariaDB 
 
-##Setup
+## Setup
 1. Clone the repository 
 2. install NodeJS and database software of your choosing. 
 3. Throw the SQL script to your database. 
