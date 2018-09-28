@@ -3,7 +3,7 @@
 At the moment its just a prototype combining a gateway (gatewayservice) and a user service (userservice) for registering and authenticating users with JWT for the hypothetical app to come. 
 
 ## Requirements
-NodeJS and MySQL/MariaDB 
+NodeJS, MySQL/MariaDB and MongoDB (I'm using mlab free tier for this)
 
 ## Setup
 1. Clone the repository 
@@ -18,6 +18,8 @@ NodeJS and MySQL/MariaDB
     * DB_DIALECT=mysql
     * PORT=
     * JWT_SECRET=
+    * URL= (for mongodb @blogservice)
+* or for mongodb 
 5. Open up a Powershell/CMD/Bash/Whatever and do `npm install`
 6. Run the services with Node 
 7. Be happy 
