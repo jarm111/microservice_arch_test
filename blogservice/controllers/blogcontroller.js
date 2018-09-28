@@ -13,7 +13,7 @@ exports.postBlog = (req, res, next) => {
             res.send(data)
         }).catch(err => {
             res.status(500).send({
-                message: 'serveri paskoi alleen',
+                message: 'server error during posting a post',
                 additional: err.message
             });
         });
@@ -26,7 +26,7 @@ exports.getAllBlogs = (req, res, next) => {
             res.json(posts)
         }).catch(err => {
             res.status(500).send({
-                message: 'serveri paskoi alleen',
+                message: 'server error during getting all posts',
                 additional: err.message
             });
         });
@@ -40,7 +40,7 @@ exports.getBlog = (req, res, next) => {
             res.json(post)
         }).catch(err => {
             res.status(500).send({
-                message: 'serveri paskoi alleen',
+                message: 'server error during getting a post',
                 additional: err.message
             });
         });
