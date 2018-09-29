@@ -1,26 +1,11 @@
 {
   "name": "gatewayservice",
+  "description": "Express Gateway Instance Bootstraped from Command Line",
+  "repository": {},
+  "license": "UNLICENSED",
   "version": "1.0.0",
-  "description": "Microservice for managing incoming http requests",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
-  },
-  "keywords": [
-    "gateway",
-    "microservice"
-  ],
-  "author": "Teemu Pölkki",
-  "license": "ISC",
+  "main": "server.js",
   "dependencies": {
-    "cors": "^2.8.4",
-    "dotenv": "^6.0.0",
-    "express": "^4.16.3",
-    "express-http-proxy": "^1.4.0",
-    "request": "^2.88.0",
-    "request-promise-native": "^1.0.5",
-    "require": "^2.4.20",
-    "uglify-js": "^3.4.9"
+    "express-gateway": "^1.12.1"
   }
 }

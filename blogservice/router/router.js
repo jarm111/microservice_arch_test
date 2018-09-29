@@ -10,5 +10,5 @@ module.exports = (app) => {
   router.post('/blog', BlogController.postBlog);
   router.get('/blog', BlogController.getAllBlogs);
   router.get('/blog/:id', BlogController.getBlog);
-
+  router.get('/', BlogController.getDefault);
   }

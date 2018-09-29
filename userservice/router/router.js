@@ -13,7 +13,7 @@ module.exports = (app) => {
   const jwtAuth = passport.authenticate('jwt', { session: false });
 
   //testidata 
-  router.get('/', UserController.getData);
+  router.get('/user', UserController.getData);
   
   // Autentikaatioreitit
   router.post('/auth/register', AuthController.localRegister);

@@ -45,3 +45,11 @@ exports.getBlog = (req, res, next) => {
             });
         });
 }
+
+exports.getDefault = (req, res, next) => {
+    const data = {
+        data1: 'data',
+        data: 'opettele koodaamaa'
+    };
+    res.send(data);
+}

@@ -1,0 +1,54 @@
+http:
+  port: 3000
+admin:
+  port: 9876
+  hostname: localhost
+
+apiEndpoints:
+  blogAPI:
+    host: localhost
+    paths: ['/api/blog','/api/blog/*']
+  userAPI: 
+    host: localhost
+    paths: ['/api/user','/api/user/*']
+serviceEndpoints:
+  blogservice:
+    url: 'http://localhost:888/'
+  userservice: 
+    url: 'http://localhost:666/'
+
+policies:
+  - basic-auth
+  - cors
+  - expression
+  - key-auth
+  - log
+  - oauth2
+  - proxy
+  - log
+pipelines:
+  blogs:
+    apiEndpoints:
+      - blogAPI
+    policies:
+      - log:
+        - action:
+            message: ${req.method} ${req.originalUrl}
+
+      - proxy:
+          - action:
+              serviceEndpoint: blogservice 
+              changeOrigin: true
+
+  users:
+    apiEndpoints:
+      - userAPI
+    policies:
+      - log:
+        - action:
+            message: ${req.method} ${req.originalUrl}
+
+      - proxy:
+          - action:
+              serviceEndpoint: userservice 
+              changeOrigin: true
