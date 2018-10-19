@@ -75,13 +75,14 @@ exports.localLogin = (req, res, next) => {
 	.then((user) => {
 		if (!user) return res.status(404).json({ success: false, message: 'Käyttäjää ei löytynyt' });
 		if (!checkPassword(req.body.password, user.dataValues.password)) return res.status(401).json({ success: false, message: 'Salasanat eivät täsmää' });
-		if(!user.dataValues.confirmed) return res.status(403).json({ success: false, message: 'Vahvista sähköpostiosoitteesi kirjautuaksesi sisään' });
-
 		const userInfo = setUserInfo(user.dataValues);
+		console.log(userInfo);
 		res.status(200).json({
 			message: 'Successfully logged in',
 			token: generateJwt(userInfo),
-			_id: userInfo._id
+			_id: userInfo._id,
+			firstName: user.firstName,
+			lastName: user.lastName
 		});
 	})
 	.catch((err) => {

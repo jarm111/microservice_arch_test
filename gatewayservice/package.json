@@ -4,7 +4,7 @@
   "repository": {},
   "license": "UNLICENSED",
   "version": "1.0.0",
-  "main": "server.js",
+  "main": "index.js",
   "dependencies": {
     "express-gateway": "^1.12.1"
   }

@@ -3,10 +3,10 @@ const config = require('../config/config'),
 
 exports.postBlog = (req, res, next) => {
     const blogpost = new post({
-        title: req.body.title,
-        post: req.body.post,
-        userID: req.body.userID,
-        user: req.body.user
+        title: req.body.data.title,
+        post: req.body.data.post,
+        userID: req.body.data.userID,
+        user: req.body.data.user
     });
     blogpost.save()
         .then(data => {

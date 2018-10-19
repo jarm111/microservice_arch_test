@@ -7,7 +7,7 @@ const model = require('../models/index'),
 exports.getData = (req, res, next) => {
   res.status(200).json({
       message: 'User found',
-      user: {
+      users: {
         firstName: 'user.firstName',
         lastName: 'user.lastName',
         email: 'user.email',
@@ -27,12 +27,11 @@ exports.getUser = (req, res, next) => {
     });
     else res.status(200).json({
       message: 'User found',
-      user: {
         firstName: user.firstName,
         lastName: user.lastName,
         email: user.email,
         customer_id: user.customer_id,
-      }
+
     });
   })
   .catch((err) => console.log('getUser failed: ' + err.message));

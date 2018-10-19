@@ -9,7 +9,6 @@ const express = require('express'),
 	cors = require('cors'),
 	app = express()
 	mongoose = require('mongoose');
-
 process.env.NODE_ENV = "developement"
 
 app.use(bodyParser.urlencoded({ extended: true }));
