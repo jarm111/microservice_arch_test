@@ -20,6 +20,7 @@ exports.postBlog = (req, res, next) => {
 };
 exports.getAllBlogs = (req, res, next) => {
     post.find({})
+        .sort({created_at: 'descending'})
         .then(posts => {
             res.statusCode = 200
             res.setHeader('Content-Type', 'application/json')

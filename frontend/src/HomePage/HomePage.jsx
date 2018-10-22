@@ -3,12 +3,12 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { BlogForm } from '../_components/BlogForm'
 import { userActions } from '../_actions';
+import Moment from 'react-moment';
 
 class HomePage extends React.Component {
     componentDidMount() {
         this.props.dispatch(userActions.getAllBlogs());
     }
-
     render() {
         const { user, users, blogs } = this.props;
         return (
@@ -34,8 +34,13 @@ class HomePage extends React.Component {
 
                                 <div key={blogs._id} className="border">
                                     <div className="divider">
-                                        <h3>Otsikko: {blogs.title}</h3>
-                                        <h4>Kirjoittanut: {blogs.user}</h4>
+                                        <h3>{blogs.title}</h3>
+                                        <h4>Kirjoittanut: {this.props.user.firstName} {this.props.user.lastName} </h4>
+                                        <h6>
+                                            <Moment format="DD/MM/YYYY HH:mm">
+                                            {blogs.created_at}
+                                            </Moment>
+                                        </h6>
                                     </div>
                                     <p>{blogs.post}</p>
                                 </div>

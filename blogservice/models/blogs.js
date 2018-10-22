@@ -22,7 +22,6 @@ const blogpostSchema = new mongoose.Schema({
         type: String,
         required: [true, 'no userID provided']
     },
-
     created_at: {
         type: Date,
         default: Date.now

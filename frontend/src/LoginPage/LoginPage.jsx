@@ -43,7 +43,14 @@ class LoginPage extends React.Component {
         return (
             <div className="container">
                 <div className="alert alert-info">
-                    Sinun tulee laittaa tunnukset suoraan tietokantaan (tai sitten postmanilla bäkkäriin, API toimii).
+                    Sinun täytyy luoda tunnukset suoraan APIin. Helpoiten se luonnistuu <b>Postman</b> ohjelmalla. <br></br>
+                    
+                    reitti -> */api/auth/register <br></br>
+                    Vaaditut kentät: <br></br>
+                    firstName:<br></br>
+                    lastName:<br></br>
+                    email:<br></br>
+                    password:
                 </div>
                 <div className="col-md-6 col-md-offset-3">
                     <h2>Kirjaudu sisään</h2>
