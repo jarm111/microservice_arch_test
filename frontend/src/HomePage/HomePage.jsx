@@ -14,7 +14,7 @@ class HomePage extends React.Component {
         return (
             <div className="container">
                 <div className="navbar">
-                    <h1>Yet another blog app</h1>
+                    <h1>Yet Another Blog App</h1>
                     <Link to="/login">Logout</Link>
                 </div>
                 <div className="navbar">
@@ -25,6 +25,10 @@ class HomePage extends React.Component {
                 </div>
                 <div className="col-lg-12">
                     <h3>Blogikirjoitukset:</h3>
+                    {/*
+                    TODO: luo blogeille oma komponentti.
+                    */
+                    }
                     {blogs.loading && <em>Loading blogs...</em>}
                     {blogs.error && <span className="text-danger">ERROR: {blogs.error}</span>}
                     {blogs && console.log(blogs.items)}

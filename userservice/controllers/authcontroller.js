@@ -82,7 +82,8 @@ exports.localLogin = (req, res, next) => {
 			token: generateJwt(userInfo),
 			_id: userInfo._id,
 			firstName: user.firstName,
-			lastName: user.lastName
+			lastName: user.lastName,
+			email: user.email
 		});
 	})
 	.catch((err) => {

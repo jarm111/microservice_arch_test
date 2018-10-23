@@ -2,11 +2,31 @@
 
 # Mikropalvelut ja Docker
 
-# Mikropalvelut 
+# Mikropalvelut ja palvelukeskeinen arkkitehtuuri webapplikaatioissa
 
-Mikropalveluarkkitehtuurissa backend koostuu mahdollisimman pieniksi palasiksi tehdyistä palveluista joita on helppo kehittää ja käyttää toisista mikropalveluista riippumatta.  Kunkin palvelun tehtävän on suorittaa **yksinkertainen** ja **helposti määriteltävä** tehtävä. Yhtenä tälläisenä voisi olla esimerkiksi käyttäjän rekisteröimiseen ja käyttäjätietojen hakemiseen tehty palvelu. 
+## Service-oriented architecture  
+SOA (Service-oriented architecture) eli palvelukeskeinen arkkitehtuuri on ohjelmistotekniikassa käytetty arkkitehtuuritason suunnittelutapa, jolla eri tietojärjestelmien toiminnot ja prosessit on suunniteltu toimimaan itsenäisinä, avoimina ja joustavina palveluina. Näitä palveluita tulisi pystyä aina käyttämään avoimien standardien rajapintojen kautta. 
 
-## Mik
+Mikropalveluarkkitehtuuri onkin osa SOAa, ja on erikoistunut implementaatio siitä.
+
+Lisää luettavaa aiheesta
+* [Introduction to SOA](https://www.ibm.com/support/knowledgecenter/en/SSMQ79_9.5.1/com.ibm.egl.pg.doc/topics/pegl_serv_overview.html)
+* [SOA vs. Microservices](https://dzone.com/articles/microservices-vs-soa-2)
+
+
+## Mikropalvelut 
+Mikropalveluarkkitehtuurissa verkkosovelluksen backend koostuu mahdollisimman pieniksi palasiksi paloitelluista palveluista joita on helppo kehittää ja käyttää toisista mikropalveluista riippumatta.  Kunkin palvelun tehtävän on suorittaa **yksinkertainen** ja **helposti määriteltävä** tehtävä. Yhtenä tälläisenä voisi olla esimerkiksi käyttäjän rekisteröimiseen ja käyttäjätietojen hakemiseen tehty palvelu. 
+
+Mitä mikropalveluita kehittäessä tulee ottaa huomioon 
+
+* Toimii itsenäisesti
+  - Jokainen palvelu pitää pystyä julkaisemaan yksinään
+* Löyhästi kytketty / korkea koheesio
+  - Jokaisen palvelun pitäisi suorittaa vain yksi tehtävä 
+* Voi sisältää muita alapuolella olevia palveluita
+* Automatisointi 
+  - Testausautomaatio ja devops julkaisun nopeuttamiseksi
+
 ## Monolotiitti- ja mikroarkkitehtuurin erot
 
 ## Demo
