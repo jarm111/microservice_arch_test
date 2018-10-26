@@ -13,7 +13,9 @@ apiEndpoints:
     paths: ['/api/user','/api/user/*', '/api/auth/*','/api/auth']
 serviceEndpoints:
   blogservice:
-    url: 'http://localhost:888/'
+    urls: 
+    - 'http://localhost:888/'
+    - 'http://127.0.1.1:888'
   userservice: 
     url: 'http://localhost:666/'
 
