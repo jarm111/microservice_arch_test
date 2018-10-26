@@ -18,10 +18,14 @@ exports.postBlog = (req, res, next) => {
             });
         });
 };
+var counter = 0;
 exports.getAllBlogs = (req, res, next) => {
     post.find({})
         .sort({created_at: 'descending'})
         .then(posts => {
+            posts.api = 'localhost:888';
+            counter++
+            console.log("******************************HIT********************************", counter)
             res.statusCode = 200
             res.setHeader('Content-Type', 'application/json')
             res.json(posts)
