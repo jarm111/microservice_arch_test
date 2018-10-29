@@ -2,12 +2,12 @@
 
 # Mikropalvelut ja Docker
 
-# Mikropalvelut ja palvelukeskeinen arkkitehtuuri webapplikaatioissa
+# Mikropalvelut webapplikaatioissa
 
 ## Service-oriented architecture  
 SOA (Service-oriented architecture) eli palvelukeskeinen arkkitehtuuri on ohjelmistotekniikassa käytetty arkkitehtuuritason suunnittelutapa, jolla eri tietojärjestelmien toiminnot ja prosessit on suunniteltu toimimaan itsenäisinä, avoimina ja joustavina palveluina. Näitä palveluita tulisi pystyä aina käyttämään avoimien standardien rajapintojen kautta. 
 
-Mikropalveluarkkitehtuurissa jokainen mikropalvelu onkin tavallaan osa SOAa, ja yksittäinen mikropalvelu toimii kuten yksittäinen palvelu SOAssa.
+Mikropalveluarkkitehtuurissa jokainen mikropalvelu onkin tavallaan palveluorientoituneen arkkitehtuurin palvelu. 
 
 Lisää luettavaa aiheesta
 * [Introduction to SOA](https://www.ibm.com/support/knowledgecenter/en/SSMQ79_9.5.1/com.ibm.egl.pg.doc/topics/pegl_serv_overview.html)
@@ -15,19 +15,22 @@ Lisää luettavaa aiheesta
 
 
 ## Mikropalvelut 
-Mikropalveluarkkitehtuurissa verkkosovelluksen backend koostuu mahdollisimman pieniksi palasiksi paloitelluista palveluista joita on helppo kehittää ja käyttää toisista mikropalveluista riippumatta.  Kunkin palvelun tehtävän on suorittaa **yksinkertainen** ja **helposti määriteltävä** tehtävä. Yhtenä tälläisenä voisi olla esimerkiksi käyttäjän rekisteröimiseen ja käyttäjätietojen hakemiseen tehty palvelu. 
+Mikropalveluarkkitehtuurissa verkkosovelluksen backend koostuu mahdollisimman pieniksi palasiksi paloitelluista palveluista joita on helppo kehittää ja käyttää toisista mikropalveluista riippumatta.  Kunkin palvelun tehtävän on suorittaa **yksinkertainen** ja **helposti määriteltävä** tehtävä. Yhtenä tälläisenä voisi olla esimerkiksi käyttäjän rekisteröimiseen ja käyttäjätietojen hakemiseen tehty palvelu. Jokainen palvelu pyörii omassa prosesissaan ja kommunikoi toisten mikropalvelujen kautta (yleensä) HTTP:n päälle rakennetun API:n kautta. 
 
 Mitä mikropalveluita kehittäessä tulee ottaa huomioon 
 
-* Toimii itsenäisesti
+* Täytyy toimia itsenäisesti
   - Jokainen palvelu pitää pystyä julkaisemaan yksinään
 * Löyhästi kytketty / korkea koheesio
   - Jokaisen palvelun pitäisi suorittaa vain yksi tehtävä 
 * Voi sisältää muita alapuolella olevia palveluita
+    * Mikropalvelun tehtävä voi olla kahden tai useamman mikropalvelun yhdistäminen
 * Automatisointi 
-  - Testausautomaatio ja devops julkaisun nopeuttamiseksi
+  - Testausautomaatio ja CI/CD putki julkaisun nopeuttamiseksi
 
-## Monolotiitti- ja mikroarkkitehtuurin erot
+
+
+
 
 ## Mitä tässä **EI** käsitelty
 
@@ -67,8 +70,17 @@ Täytyy myös ottaa huomioon että yleensä kontit ajetaan virtuaalikoneen pää
 
 ## Dockerfile
 
+Dockerfile on tiedosto joka ohjeistaa Dockerille kuinka docker image tulee rakentaa.  
+
+[Demon dockerfile ohjeeksi](https://github.com/TemeASD/microservice_arch_test/blob/master/blogservice/Dockerfile)
 ## Tehtävä
 
-Pyöräyttäkää demon kanssa Dockerissa toimiva mikropalvelu, jolla käyttäjä voi kirjoittaa kommentteja joko käyttäjän tai blogikirjoituksen alle. Sen pitäisi tarjota molemmille vähintään CREATE ja READ reitit, ja toimia täysin itsenäisesti. 
+Pyöräyttäkää demon kanssa Dockerissa toimiva mikropalvelu, jolla käyttäjä voi kirjoittaa kommentteja joko käyttäjän tai blogikirjoituksen alle. (Tälle UI valmiina) Sen pitäisi tarjota molemmille vähintään CREATE ja READ reitit, ja toimia täysin itsenäisesti. 
 
+Esimerkin frontendiin on toteutettu blogikirjoitusten reititys seuraavasti. 
+
+* Blogin kommentointi
+    * GET `/api/blog/comment`
+    * POST `/api/blog/:id/comment`
+  
 Käytä haluamaasi ohjelmointikieltä ja tietokantapalvelua. 
