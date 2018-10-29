@@ -7,7 +7,7 @@
 ## Service-oriented architecture  
 SOA (Service-oriented architecture) eli palvelukeskeinen arkkitehtuuri on ohjelmistotekniikassa käytetty arkkitehtuuritason suunnittelutapa, jolla eri tietojärjestelmien toiminnot ja prosessit on suunniteltu toimimaan itsenäisinä, avoimina ja joustavina palveluina. Näitä palveluita tulisi pystyä aina käyttämään avoimien standardien rajapintojen kautta. 
 
-Mikropalveluarkkitehtuuri onkin osa SOAa, ja on erikoistunut implementaatio siitä.
+Mikropalveluarkkitehtuurissa jokainen mikropalvelu onkin tavallaan osa SOAa, ja yksittäinen mikropalvelu toimii kuten yksittäinen palvelu SOAssa.
 
 Lisää luettavaa aiheesta
 * [Introduction to SOA](https://www.ibm.com/support/knowledgecenter/en/SSMQ79_9.5.1/com.ibm.egl.pg.doc/topics/pegl_serv_overview.html)
@@ -29,9 +29,17 @@ Mitä mikropalveluita kehittäessä tulee ottaa huomioon
 
 ## Monolotiitti- ja mikroarkkitehtuurin erot
 
-## Demo
+## Mitä tässä **EI** käsitelty
 
-## Tehtävä
+Mikropalveluarkkitehtuuri on laaja ja syvä suo jossa on paljon opittavaa. Kaikkia asioita ei kerkeä muutamassa tunnisa käymään, joten tässä pieni lista asioita mitä kannattaa lähteä tutkimaan jos mikropalvelut kiinnostavat. 
+
+* Dynamic service discovery
+* Data Synchronization
+* Data Staleness
+* Monitoring
+* Logging 
+
+## Demo
 
 
 # Docker
@@ -55,7 +63,12 @@ Rautatason virtualisointi	|Käyttöjärjestelmätason virtualisointi
 Käynnistysaika < 30s	| Käynnistysaika < 2s
 Täysin eristetty, turvallisempi	| Prosessitason eristys, ei välttämättä niin turvallinen
 
+Täytyy myös ottaa huomioon että yleensä kontit ajetaan virtuaalikoneen päällä. 
+
 ## Dockerfile
 
 ## Tehtävä
 
+Pyöräyttäkää demon kanssa Dockerissa toimiva mikropalvelu, jolla käyttäjä voi kirjoittaa kommentteja joko käyttäjän tai blogikirjoituksen alle. Sen pitäisi tarjota molemmille vähintään CREATE ja READ reitit, ja toimia täysin itsenäisesti. 
+
+Käytä haluamaasi ohjelmointikieltä ja tietokantapalvelua. 
