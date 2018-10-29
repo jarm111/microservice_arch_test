@@ -15,7 +15,7 @@ Lisää luettavaa aiheesta
 
 
 ## Mikropalvelut 
-Mikropalveluarkkitehtuurissa verkkosovelluksen backend koostuu mahdollisimman pieniksi palasiksi paloitelluista palveluista joita on helppo kehittää ja käyttää toisista mikropalveluista riippumatta.  Kunkin palvelun tehtävän on suorittaa **yksinkertainen** ja **helposti määriteltävä** tehtävä. Yhtenä tälläisenä voisi olla esimerkiksi käyttäjän rekisteröimiseen ja käyttäjätietojen hakemiseen tehty palvelu. Jokainen palvelu pyörii omassa prosesissaan ja kommunikoi toisten mikropalvelujen kautta (yleensä) HTTP:n päälle rakennetun API:n kautta. 
+Mikropalveluarkkitehtuurissa verkkosovelluksen backend koostuu mahdollisimman pieniksi palasiksi paloitelluista palveluista joita on helppo kehittää ja käyttää toisista mikropalveluista riippumatta.  Kunkin palvelun tehtävän on suorittaa **yksinkertainen** ja **helposti määriteltävä** tehtävä. Yhtenä tälläisenä voisi olla esimerkiksi käyttäjän rekisteröimiseen ja käyttäjätietojen hakemiseen tehty palvelu. Jokainen palvelu pyörii omassa prosessissaan ja kommunikoi toisten mikropalvelujen kautta (yleensä) HTTP:n päälle rakennetun API:n kautta. 
 
 ### Mitä mikropalveluita kehittäessä tulee ottaa huomioon 
 * Täytyy toimia itsenäisesti
@@ -57,8 +57,8 @@ Docker on ohjelmisto jonka avulla voit virtualisoida ohjelmistoja käyttöjärje
 
 
 ## Konttien edut
-
 Yleisesti ottaen kontit ovat kevyempiä suorittaa kuin kokonaiset virtuaalikoneet, koska konttien ei tarvitse suorittaa omaa käyttöjärjestelmää.
+
 ### Virtuaalikone vs. kontti: 
 | Virtuaalikoneet | Kontit |
 | --- | --- |
@@ -87,7 +87,6 @@ Dockerfile on tiedosto joka ohjeistaa Dockerille kuinka docker image tulee raken
 
 
 # Tehtävä
-
 Pyöräyttäkää demon kanssa Dockerissa toimiva mikropalvelu, jolla käyttäjä voi kirjoittaa kommentteja joko käyttäjän tai blogikirjoituksen alle. (Tälle UI valmiina) Sen pitäisi tarjota molemmille vähintään CREATE ja READ reitit, ja toimia täysin itsenäisesti. 
 
 Esimerkin frontendiin on toteutettu blogikirjoitusten reititys seuraavasti. 
