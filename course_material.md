@@ -75,7 +75,7 @@ Täytyy myös ottaa huomioon että yleensä kontit ajetaan virtuaalikoneen pää
 
 Dockerfile on tiedosto joka ohjeistaa Dockerille kuinka docker image tulee rakentaa. 
 
-[Demon dockerfile ohjeeksi](https://github.com/TemeASD/microservice_arch_test/blob/master/blogservice/Dockerfile)
+[Demossa käytetty .dockerfile ohjeeksi](https://github.com/TemeASD/microservice_arch_test/blob/master/blogservice/Dockerfile)
 
 ### .dockerignore
 .dockerignore tiedosto on rakenteeltaan ja toiminnaltaan kuten .gitignore. Siihen sisällytetään tiedostot ja kansiorakenteet joita ei haluta docker imageen mukaan. 
