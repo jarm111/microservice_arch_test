@@ -2,9 +2,8 @@ import config from 'config';
 import { authHeader } from '../_helpers';
 
 export const blogService = {
-    getAllBlogs,
-    getBlog,
-    postBlog
+    getComments,
+    postComment
 };
 
 function getAllBlogs() {
@@ -14,22 +13,16 @@ function getAllBlogs() {
     };
     return fetch(`${config.apiUrl}/blog`, requestOptions).then(handleResponse);
 }
-function getBlog(blog_id) {
-    const requestOptions = {
-        method: 'GET',
-        headers: authHeader()
-    };
-    return fetch(`${config.apiUrl}/blog/${blog_id}`, requestOptions).then(handleResponse);
-}
-function postBlog(data) {
+
+function postComment(data) {
     const requestOptions = {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ data })
     };
-    return fetch(`${config.apiUrl}/blog`, requestOptions)
+    return fetch(`${config.apiUrl}/blog/${blog_id}/comment`, requestOptions)
         .then(handleResponse)
-        .then(getAllBlogs)
+        .then(getComments)
         .then(locationReload)
 }
 
