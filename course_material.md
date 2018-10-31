@@ -35,7 +35,6 @@ Mikropalveluiden yksittäinen suuri etu on se, jos yksi osa pitää päivittää
 Alla on muutamia eri malleja kuinka mikropalveluiden avulla mikropalvelusovelluksia voi muodostaa. Huomaathan että nämä ovat vain esimerkkejä, ja niitä voi yhdistellä oman mielensä mukaan. Allekirjoittaneen mielestä järkevin olisi **shared service** malli, jonka edessä olisi proxy/gateway jossa tapahtuu käyttäjien/API kutsujen autentikaatio sekä reititys.
 
 #### Aggregator pattern
-
 ![Aggregator pattern](https://www.tutorialspoint.com/microservice_architecture/images/aggregator_pattern.jpg)
 
 Asiakasohjelma pyytää dataa aggregatorilta, ja aggregator välittää  pyynnöt eteenpäin mikropalveluille. Vastaukset saatuaan aggregator yhdistää resursseja tarpeen mukaan ja lähettää lopputuloksen asiakasohjelmalle. 
@@ -114,9 +113,7 @@ Lorem ipsum jne jne jne
 
 
 # Tehtävä
-Tee demon kanssa harmoniassa toimiva mikropalvelu, jolla käyttäjä voi kirjoittaa kommentteja blogikirjoituksen alle (Tälle UI valmiina). Huomioi ratkaisuissasi että samaa mikropalvelua pitäisi voida käyttää myös esimerkiksi käyttäjän kommentoimiseen (tätä siis **ei** tarvitse implementoida).  Mikropalvelun pitäisi tarjota vähintään CREATE ja READ reitit, ja toimia täysin itsenäisesti. 
-
-Esimerkin frontendiin on toteutettu blogikirjoitusten reititys seuraavasti. 
+Tee demon kanssa harmoniassa toimiva mikropalvelu, jolla käyttäjä voi kirjoittaa kommentteja blogikirjoituksen alle (Tälle **EI OLE** UI:ta). Huomioi ratkaisuissasi että samaa mikropalvelua pitäisi voida tulevaisuudessa käyttää myös esimerkiksi käyttäjän kommentoimiseen.  Mikropalvelun pitäisi tarjota vähintään CREATE ja READ reitit, ja toimia täysin itsenäisesti. 
 
 * Blogin kommentointi
     * GET `/api/blog/comment`
@@ -125,4 +122,3 @@ Esimerkin frontendiin on toteutettu blogikirjoitusten reititys seuraavasti.
 Käytä haluamaasi ohjelmointikieltä ja tietokantapalvelua.
 
 Saatuasi mikropalvelusi toimimaan, tee sille Dockerfile tiedosto ja buildaa siitä docker image. 
-Testaa toiminta. 
