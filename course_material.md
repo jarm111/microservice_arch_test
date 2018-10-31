@@ -56,7 +56,7 @@ Eräänä huonona puolena on se, että yksittäinen palvelu voi lukita koko suor
 #### Shared resource pattern
 ![Shared resource pattern](https://www.tutorialspoint.com/microservice_architecture/images/shared_resource_pattern.jpg)
 
-Usein käytetty malli jossa kutsut voidaan tehdä suoraan palvelulle, ja jokin palveluista voi olla proxy tai aggregator jonka kautta se kommunikoi useammalle eri palvelulle samaan aikaan. 
+Usein käytetty malli jossa kutsut voidaan tehdä suoraan palvelulle, ja jokin palveluista voi olla proxy tai aggregator jonka kautta se kommunikoi useammalle eri palvelulle samaan aikaan.  
 
 ### Milloin mikropalveluita kannattaa käyttää
 * Laajat sovellukset jotka vaativat nopean julkaisusyklin
@@ -73,8 +73,6 @@ Mikropalveluarkkitehtuuri on laaja ja syvä suo jossa on paljon opittavaa. Kaikk
 * Logging 
 * Message queues
   
-## Demo
-
 
 # Docker
 Docker on ohjelmisto jonka avulla voit virtualisoida ohjelmistoja käyttöjärjestelmätasolla. Dockerin avulla voit ajaa eri sovelluksia "konteissa", jotka toimivat käyttöjärjestelmän käyttäjäavaruudessa. Konteissa toimivat ohjelmat eivät näe muita ohjelmia ja näkevät pelkästään kullekkin kontille määritellyt resurssit. Kontteja käytetään usein mikropalveluiden yhteydessä.
