@@ -13,4 +13,4 @@ RUN npm install
 #Avataan portti 888 ulkomaailmaan
 EXPOSE 888
 #Komento joka ajetaan kun docker image suoritetaan
-CMD npm start
+CMD node index.js
