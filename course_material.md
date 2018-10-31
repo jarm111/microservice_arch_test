@@ -113,6 +113,8 @@ Dockerfile on tiedosto joka ohjeistaa Dockerille kuinka docker image tulee raken
 ### .dockerignore
 .dockerignore tiedosto on rakenteeltaan ja toiminnaltaan kuten .gitignore. Siihen sisällytetään tiedostot ja kansiorakenteet joita ei haluta docker imageen mukaan. 
 
+## Docker Compose 
+Lorem ipsum jne jne jne 
 
 ## Mitä tässä **EI** käsitelty
 * Orkestraattori
@@ -120,7 +122,7 @@ Dockerfile on tiedosto joka ohjeistaa Dockerille kuinka docker image tulee raken
 
 
 # Tehtävä
-Pyöräyttäkää demon kanssa Dockerissa toimiva mikropalvelu, jolla käyttäjä voi kirjoittaa kommentteja joko käyttäjän tai blogikirjoituksen alle. (Tälle UI valmiina) Sen pitäisi tarjota molemmille vähintään CREATE ja READ reitit, ja toimia täysin itsenäisesti. 
+Tee demon kanssa harmoniassa toimiva mikropalvelu, jolla käyttäjä voi kirjoittaa kommentteja blogikirjoituksen alle (Tälle UI valmiina). Huomioi ratkaisuissasi että samaa mikropalvelua pitäisi voida käyttää myös esimerkiksi käyttäjän kommentoimiseen (tätä siis **ei** tarvitse implementoida).  Mikropalvelun pitäisi tarjota vähintään CREATE ja READ reitit, ja toimia täysin itsenäisesti. 
 
 Esimerkin frontendiin on toteutettu blogikirjoitusten reititys seuraavasti. 
 
@@ -128,4 +130,7 @@ Esimerkin frontendiin on toteutettu blogikirjoitusten reititys seuraavasti.
     * GET `/api/blog/comment`
     * POST `/api/blog/:id/comment`
   
-Käytä haluamaasi ohjelmointikieltä ja tietokantapalvelua. 
+Käytä haluamaasi ohjelmointikieltä ja tietokantapalvelua.
+
+Saatuasi mikropalvelusi toimimaan, tee sille Dockerfile tiedosto ja buildaa siitä docker image. 
+Testaa toiminta. 

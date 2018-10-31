@@ -4,11 +4,9 @@ import { connect } from 'react-redux';
 import { BlogForm } from '../_components/BlogForm'
 import { userActions } from '../_actions';
 import Moment from 'react-moment';
+import AllBlogs from '../_components/AllBlogs';
 
 class HomePage extends React.Component {
-    componentDidMount() {
-        this.props.dispatch(userActions.getAllBlogs());
-    }
     render() {
         const { user, users, blogs } = this.props;
         return (
@@ -24,10 +22,9 @@ class HomePage extends React.Component {
                     <BlogForm user />
                 </div>
                 <div className="col-lg-12">
-                    <h3>Blogikirjoitukset:</h3>
                     {/*
                     TODO: luo blogeille oma komponentti.
-                    */
+             
                     }
                     {blogs.loading && <em>Loading blogs...</em>}
                     {blogs.error && <span className="text-danger">ERROR: {blogs.error}</span>}
@@ -50,7 +47,8 @@ class HomePage extends React.Component {
                                 </div>
                             )}
                         </div>
-                    }
+                          */}
+                    <AllBlogs/>
                 </div>
             </div>
         );
