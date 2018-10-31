@@ -60,7 +60,7 @@ Usein käytetty malli jossa kutsut voidaan tehdä suoraan palvelulle, ja jokin p
 ### Milloin mikropalveluita kannattaa käyttää
 * Laajat sovellukset jotka vaativat nopean julkaisusyklin
 * Monimutkaiset ja skaalautumista vaativat sovellukset 
-* Organisaatio joka koostuu pienistä kehittäjätiimeistä
+* Organisaatio joka koostuu pienistä kehittäjätiimeistä 
 * Sovelluksessa on selkeitä yksittäisiä osia jotka vaativat spesifejä teknologoita joita ei muualla tarvita 
 
 ### Milloin mikropalveluita ei kannata käyttää
@@ -109,11 +109,25 @@ Dockerfile on tiedosto joka ohjeistaa Dockerille kuinka docker image tulee raken
 
 [Demossa käytetty .dockerfile ohjeeksi](https://github.com/TemeASD/microservice_arch_test/blob/master/blogservice/Dockerfile)
 
+[Virallinen dokumentaatio](https://docs.docker.com/engine/reference/builder/)
+
+### docker build
+#### Esimerkki
+* `sudo docker build -t blogservice .`
+    - Buildaa imagen
+    - Tägää sen "blogservice" nimellä
+    - . <- relatiivinen kansio jossa dockerfile sijaitsee 
+* `sudo docker run blogservice`
+    - Ajaa blogservice palvelun
+  
 ### .dockerignore
 .dockerignore tiedosto on rakenteeltaan ja toiminnaltaan kuten .gitignore. Siihen sisällytetään tiedostot ja kansiorakenteet joita ei haluta docker imageen mukaan. 
 
+[Virallinen dokumentaatio](https://docs.docker.com/engine/reference/builder/#dockerignore-file)
 ## Docker Compose 
 Lorem ipsum jne jne jne 
+
+[Virallinen dokumentaatio](https://docs.docker.com/compose/compose-file/)
 
 ## Mitä tässä **EI** käsitelty
 * Orkestraattori
@@ -121,7 +135,7 @@ Lorem ipsum jne jne jne
 
 
 # Tehtävä
-Tee demon kanssa harmoniassa toimiva mikropalvelu, jolla käyttäjä voi kirjoittaa kommentteja blogikirjoituksen alle (Tälle **EI OLE** UI:ta). Huomioi ratkaisuissasi että samaa mikropalvelua pitäisi voida tulevaisuudessa käyttää myös esimerkiksi käyttäjän kommentoimiseen.  Mikropalvelun pitäisi tarjota vähintään CREATE ja READ reitit, ja toimia täysin itsenäisesti. 
+Tee demon kanssa harmoniassa toimiva mikropalvelu, jolla käyttäjä voi kirjoittaa kommentteja blogikirjoituksen alle (tälle **EI OLE** UI:ta). Huomioi ratkaisuissasi että samaa mikropalvelua pitäisi voida tulevaisuudessa käyttää myös esimerkiksi käyttäjän kommentoimiseen.  Mikropalvelun pitäisi tarjota vähintään CREATE ja READ reitit, ja toimia täysin itsenäisesti. 
 
 * Blogin kommentointi
     * GET `/api/blog/comment`
@@ -129,4 +143,5 @@ Tee demon kanssa harmoniassa toimiva mikropalvelu, jolla käyttäjä voi kirjoit
   
 Käytä haluamaasi ohjelmointikieltä ja tietokantapalvelua.
 
-Saatuasi mikropalvelusi toimimaan, tee sille Dockerfile tiedosto ja buildaa siitä docker image. 
+Saatuasi mikropalvelusi toimimaan, tee sille **Dockerfile** tiedosto ja buildaa siitä **docker image**.
+Tämän jälkeen lisää se gatewayservicen 
