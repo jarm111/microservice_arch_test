@@ -60,7 +60,15 @@ Usein käytetty malli jossa kutsut voidaan tehdä suoraan palvelulle, ja jokin p
 ### Milloin mikropalveluita kannattaa käyttää
 * Laajat sovellukset jotka vaativat nopean julkaisusyklin
 * Monimutkaiset ja skaalautumista vaativat sovellukset 
-* Organisaatio joka koostuu pienistä kehittäjätiimeistä 
+* Organisaatio joka koostuu pienistä kehittäjätiimeistä
+* Sovelluksessa on selkeitä yksittäisiä osia jotka vaativat spesifejä teknologoita joita ei muualla tarvita 
+
+### Milloin mikropalveluita ei kannata käyttää
+* Pieni kehitystiimi
+* Jos sen käytölle ei ole mitään hyvää syytä
+* Arkkitehtuuri on yksinkertainen
+* Ei tarvetta polyglotismille
+    
 
 ## Mitä tässä **EI** käsitelty
 Mikropalveluarkkitehtuuri on laaja ja syvä suo jossa on paljon opittavaa. Kaikkia asioita ei kerkeä muutamassa tunnisa käymään, joten tässä pieni lista asioita mitä kannattaa lähteä tutkimaan jos mikropalvelut kiinnostavat. 
