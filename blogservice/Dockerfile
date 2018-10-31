@@ -7,10 +7,12 @@ WORKDIR /usr/src/app
 COPY ["package.json", "package-lock.json*", "npm-shrinkwrap.json*", "./"]
 #Viimeisin NPM 
 RUN npm i npm@latest -g
-#Asennetaan paketit package.jsonista
+#Asennetaan paketit package.jsonista ja globaali nodemon
+RUN npm i nodemon@latest -g
 RUN npm install
-#COPY . .
+COPY . .
 #Avataan portti 888 ulkomaailmaan
 EXPOSE 888
 #Komento joka ajetaan kun docker image suoritetaan
-CMD npm start
+CMD node index.js
+
