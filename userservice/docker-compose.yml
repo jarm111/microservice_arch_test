@@ -1,25 +1,34 @@
 version: '3'
-
+# Määritellään käytetyt palvelut
 services:
+  # Microservice
   mircroservice:
+    # Image jota käytetään pohjalla
     image: userservice
     build: .
     environment:
       NODE_ENV: developement
     ports:
       - 777:777
+    # Käynnistetään tämä palvelu vasta DB palvelun käynnistyksen jälkeen
     depends_on:
       - db
+    # Kontin nimi
     container_name: userservice
 
   db:
+    # Haetaan mariadb dockerin reposta
     image: mariadb
     restart: always
+    # Tietokannan salasana, tulee vastata .env tiedoston salasanaa
     environment:
       MYSQL_ROOT_PASSWORD: example
+    # Portit auki
     ports:
       - 3306:3306
+    # Kontin nimi, tätä käytetään hostnamena .env tiedostossa
     container_name: mariadb
+  # Adminer on php:lla toimiva tietokantapalvelu, hyvä debuggaukseen jnejnejne  
   adminer:
     image: adminer
     restart: always

@@ -130,7 +130,7 @@ Applikaation saa pyörimään Dockerin sisälle näillä komennoilla
 ## Docker Compose 
 Docker Compose on työkalu jonka avulla ajetaan useita Docker kontteja sisältäviä sovelluksia. 
 
-[Asennus ohjeet] (https://github.com/docker/compose/releases)
+[Asennusohjeet] (https://github.com/docker/compose/releases)
 
 [Virallinen dokumentaatio](https://docs.docker.com/compose/compose-file/)
 
@@ -146,3 +146,6 @@ Käytä haluamaasi ohjelmointikieltä ja tietokantapalvelua.
 Saatuasi mikropalvelusi toimimaan 
 A) Tee sille **Dockerfile** ja kommentoi se, sekä buildaa **docker image**.
 B) Tämän jälkeen lisää se gatewayservicen `gateway.config.yml` tiedostoon niin, että voit hakea palvelun resursseja gatewayn kautta. 
+C) Yhdistä kaikki palvelut yhdeksi läjäksi Docker Composen avulla
+
+Huomaa että C) kohta vaatii 
