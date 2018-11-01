@@ -11,11 +11,13 @@ NodeJS and MongoDB (Docker-CE)
 2. install NodeJS and database software of your choosing.  
 3. Create .env file
 * It looks like this
-    * PORT=port of your choosing*
-    * URL=for mongodb
-4. Open up a Powershell/CMD/Bash/Whatever and do `npm install`
-5. Run the services with Node 
-6. Be happy 
+    * PORT=
+        * Port which the the application will bind itself to
+    * URL=
+        * URL to mongodb instance
+1. Open up a Powershell/CMD/Bash/Whatever and do `npm install`
+2. Run the services with Node 
+3. Be happy 
 
 ### Docker image
 4. Check that the .env values are the same as in Dockerfile

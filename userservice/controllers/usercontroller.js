@@ -47,11 +47,10 @@ exports.updateUser = (req, res, next) => {
   .then(updatedUser => {
     res.status(200).json({
       message: 'User updated',
-      user: {
         firstName: updatedUser.firstName,
         lastName: updatedUser.lastName,
         email: updatedUser.email,
-      }
+        customer_id: user.customer_id,
     });
   })
   .catch((err) => console.log('updatedUser failed: ' + err));
