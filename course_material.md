@@ -3,7 +3,7 @@
 # Mikropalvelut ja Docker
 
 # Mikropalvelut webapplikaatioissa
-
+[Tunnilla näytetty presis](https://www.dropbox.com/s/36xa3yty4uiexq7/Dockermikropalvelut.pdf?dl=1)
 ## Service-oriented architecture  
 SOA (Service-oriented architecture) eli palvelukeskeinen arkkitehtuuri on ohjelmistotekniikassa käytetty arkkitehtuuritason suunnittelutapa, jolla eri tietojärjestelmien toiminnot ja prosessit on suunniteltu toimimaan itsenäisinä, avoimina ja joustavina palveluina. Näitä palveluita tulisi pystyä aina käyttämään avoimien standardien rajapintojen kautta. 
 

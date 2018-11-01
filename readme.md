@@ -9,3 +9,5 @@ Architecture doesnt handle authorization well at all. Doesnt do any check on bac
 
 Also there are no checks or methods in place to update the data in blogservice if something is changed in userservice or vice versa. 
 
+## Presentation about the materials 
+https://www.dropbox.com/s/36xa3yty4uiexq7/Dockermikropalvelut.pdf?dl=1 
