@@ -25,5 +25,4 @@ const server = http.createServer(app);
 
 server.listen(config.main.port, () => console.log(`API running on localhost:${config.main.port}`));
 
-
 module.exports = server;

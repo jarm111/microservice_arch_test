@@ -9,7 +9,7 @@ services:
     environment:
       NODE_ENV: developement
     ports:
-      - 777:777
+      - 1234:1234
     # Käynnistetään tämä palvelu vasta DB palvelun käynnistyksen jälkeen
     depends_on:
       - db

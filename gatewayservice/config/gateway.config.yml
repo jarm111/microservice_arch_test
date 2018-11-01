@@ -14,9 +14,9 @@ apiEndpoints:
 serviceEndpoints:
   blogservice:
     urls: 
-    - 'http://localhost:888/'
+    - 'http://localhost:1235/'
   userservice: 
-    url: 'http://localhost:666/'
+    url: 'http://localhost:1234/'
 
 policies:
   - basic-auth
