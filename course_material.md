@@ -15,7 +15,7 @@ Lisää luettavaa aiheesta
 
 
 ## Mikropalvelut 
-Mikropalveluarkkitehtuurissa verkkosovelluksen backend koostuu mahdollisimman pieniksi palasiksi paloitelluista palveluista joita on helppo kehittää ja käyttää toisista mikropalveluista riippumatta.  Kunkin palvelun tehtävän on suorittaa **yksinkertainen** ja **helposti määriteltävä** tehtävä. Yhtenä tälläisenä voisi olla esimerkiksi käyttäjän rekisteröimiseen ja käyttäjätietojen hakemiseen tehty palvelu. Jokainen palvelu pyörii omassa prosessissaan ja kommunikoi toisten mikropalvelujen kautta (yleensä) HTTP:n päälle rakennetun API:n kautta. 
+Mikropalveluarkkitehtuurissa verkkosovelluksen backend koostuu mahdollisimman pieniksi palasiksi paloitelluista palveluista joita on helppo kehittää ja käyttää toisista mikropalveluista riippumatta.  Kunkin palvelun tehtävän on suorittaa **yksinkertainen** ja **helposti määriteltävä** tehtävä. Yhtenä tälläisenä voisi olla esimerkiksi käyttäjän rekisteröimiseen ja käyttäjätietojen hakemiseen tehty palvelu. Jokainen palvelu pyörii omassa prosessissaan ja kommunikoi toisten mikropalvelujen kautta (yleensä) HTTP:n päälle rakennetun API:n kautta. Mikropalvelut voivat käyttää keskinäiseen viestintäänsä käytännössä mitä tahansa protokollaa. 
 
 ### Mitä mikropalveluita kehittäessä tulee ottaa huomioon 
 * Täytyy toimia itsenäisesti
@@ -136,6 +136,8 @@ Docker Compose on työkalu jonka avulla ajetaan useita Docker kontteja sisältä
 
 ## Mitä tässä **EI** käsitelty
 * Orkestraattori (Kubernetes, Docker Swarm)
+* Edistyneemmät toiminnot
+    * Verkon jako, paikalliseen tiedostojärjestelmään tallentaminen, jne
 * Varmasti paljon muuta mitä ei tule mieleen
 
 # Tehtävä
@@ -147,5 +149,3 @@ Saatuasi mikropalvelusi toimimaan
 A) Tee sille **Dockerfile** ja kommentoi se, sekä buildaa **docker image**.
 B) Tämän jälkeen lisää se gatewayservicen `gateway.config.yml` tiedostoon niin, että voit hakea palvelun resursseja gatewayn kautta. 
 C) Yhdistä kaikki palvelut yhdeksi läjäksi Docker Composen avulla
-
-Huomaa että C) kohta vaatii 
