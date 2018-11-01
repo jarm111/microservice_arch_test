@@ -36,7 +36,8 @@ NodeJS and MariaDB (Docker-CE, Docker-Compose)
 7. Be happy
 
 ## API documentation
-* *< implies url like for example "localhost:1234"   
+* *< implies url like for example `localhost:1234`
+* Example: `localhost:1234/api/auth/register`   
 * Returns JSON data object: `user` like this
     * `customer_id` user id 
     * `firstName` datetime

@@ -10,23 +10,24 @@ NodeJS and MongoDB (Docker-CE)
 1. Clone the repository 
 2. install NodeJS and database software of your choosing.  
 3. Create .env file
-* It looks like this
     * PORT=
         * Port which the the application will bind itself to
     * URL=
         * URL to mongodb instance
-1. Open up a Powershell/CMD/Bash/Whatever and do `npm install`
-2. Run the services with Node 
-3. Be happy 
+4. Open up a Powershell/CMD/Bash/Whatever and do `npm install`
+5. Run the services with Node 
+6. Be happy 
 
 ### Docker image
 4. Check that the .env values are the same as in Dockerfile
 5. Open up a Powershell/CMD/Bash/Whatever and do `docker build -t "your tag here" .`
-6. `docker run -p PORT:PORT "your tag here"`
+6. Run the image with a command `docker run -p PORT:PORT "your tag here"`
+   * POST must match the port of the .env file
 7. Be happy
 ## API documentation
-* *< implies url like for example "localhost:1234"   
-* Returns JSON data
+* *< implies url like for example `localhost:1234`
+* Example: `localhost:1234/api/blog`
+* API returns JSON data
     * `_id` mongodb default id 
     * `created_at` datetime
     * `title` String
@@ -35,10 +36,10 @@ NodeJS and MongoDB (Docker-CE)
     * `user` String
 * GET `*/api/blog`
     * Get all blogs
-    * Returns array of blogs
+    * Returns array of blog objects
 * GET `*/api/blog/:id`
     * Get a blog by `_id`
-    * Returns single blog
+    * Returns single blog object
 * POST `*/api/blog` 
     * expects json body 
         * `title`    
