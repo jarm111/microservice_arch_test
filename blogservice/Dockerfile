@@ -13,7 +13,7 @@ RUN npm install
 #Kopioidaan kaikki tiedostot projektikansiosta /usr/src/app kansioon
 COPY . .
 #Avataan portti ulkomaailmaan
-EXPOSE 888
+EXPOSE 1235
 #Komento joka ajetaan kun docker image suoritetaan
 CMD nodemon index.js
 

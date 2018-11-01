@@ -15,7 +15,7 @@ Lisää luettavaa aiheesta
 
 
 ## Mikropalvelut 
-Mikropalveluarkkitehtuurissa verkkosovelluksen backend koostuu mahdollisimman pieniksi palasiksi paloitelluista palveluista joita on helppo kehittää ja käyttää toisista mikropalveluista riippumatta.  Kunkin palvelun tehtävän on suorittaa **yksinkertainen** ja **helposti määriteltävä** tehtävä. Yhtenä tälläisenä voisi olla esimerkiksi käyttäjän rekisteröimiseen ja käyttäjätietojen hakemiseen tehty palvelu. Jokainen palvelu pyörii omassa prosessissaan ja kommunikoi toisten mikropalvelujen kautta (yleensä) HTTP:n päälle rakennetun API:n kautta. 
+Mikropalveluarkkitehtuurissa verkkosovelluksen backend koostuu mahdollisimman pieniksi palasiksi paloitelluista palveluista joita on helppo kehittää ja käyttää toisista mikropalveluista riippumatta.  Kunkin palvelun tehtävän on suorittaa **yksinkertainen** ja **helposti määriteltävä** tehtävä. Yhtenä tälläisenä voisi olla esimerkiksi käyttäjän rekisteröimiseen ja käyttäjätietojen hakemiseen tehty palvelu. Jokainen palvelu pyörii omassa prosessissaan ja kommunikoi toisten mikropalvelujen kautta (yleensä) HTTP:n päälle rakennetun API:n kautta. Mikropalvelut voivat käyttää keskinäiseen viestintäänsä käytännössä mitä tahansa protokollaa. 
 
 ### Mitä mikropalveluita kehittäessä tulee ottaa huomioon 
 * Täytyy toimia itsenäisesti
@@ -101,7 +101,7 @@ Virtuaalikone suorittaa oman käyttöjärjestelmänsä| Kontit jakavat yhden kä
 Rautatason virtualisointi	|Käyttöjärjestelmätason virtualisointi
 Käynnistysaika < 30s	| Käynnistysaika < 2s
 Täysin eristetty, turvallisempi	| Prosessitason eristys, ei välttämättä niin turvallinen
-Vie paljon levytilaa (>500mb)| Vie vain vähän levytilaa (>10mb)
+Vie enemmän levytilaa (>500mb) | Vie vain vähän levytilaa (>10mb)
 
 Täytyy myös ottaa huomioon että yleensä kontit ajetaan virtuaalikoneen päällä. 
 
@@ -138,11 +138,12 @@ Docker Compose on työkalu jonka avulla ajetaan useita Docker kontteja sisältä
 
 ## Mitä tässä **EI** käsitelty
 * Orkestraattori (Kubernetes, Docker Swarm)
-* Edistyneemmät ominaisuudet
+* Edistyneemmät toiminnot
+    * Verkon jako, paikalliseen tiedostojärjestelmään tallentaminen, jne
 * Varmasti paljon muuta mitä ei tule mieleen
 
 # Tehtävä
-Tee demon kanssa harmoniassa toimiva mikropalvelu, esimerkiksi sellainen jolla käyttäjä voi kirjoittaa kommentteja blogikirjoituksen alle (tälle **EI OLE** UI:ta). Mikropalvelun pitäisi tarjota vähintään CREATE ja READ reitit, tallentaa dataa tietokantaan ja toimia täysin itsenäisesti. 
+Tee demon kanssa harmoniassa toimiva mikropalvelu, esimerkiksi sellainen jolla käyttäjä voi kirjoittaa kommentteja blogikirjoituksen alle (tälle **EI OLE** UI:ta). Mikropalvelun pitäisi tarjota vähintään CREATE ja READ reitit, tallentaa dataa tietokantaan ja toimia täysin itsenäisesti. Tärkeää ei ole mikropalvelun monimutkaisuus tai laajuus, vaan se että palvelu on järkevä ja suorittaa vain yhden tehtäväkokonaisuuden.
     
 Käytä haluamaasi ohjelmointikieltä ja tietokantapalvelua. 
 
@@ -150,5 +151,3 @@ Saatuasi mikropalvelusi toimimaan
 A) Tee sille **Dockerfile** ja kommentoi se, sekä buildaa **docker image**.
 B) Tämän jälkeen lisää se gatewayservicen `gateway.config.yml` tiedostoon niin, että voit hakea palvelun resursseja gatewayn kautta. 
 C) Yhdistä kaikki palvelut yhdeksi läjäksi Docker Composen avulla
-
-Huomaa että C) kohta vaatii hieman ajattelua ja suunnittelua. 
