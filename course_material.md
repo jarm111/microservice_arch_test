@@ -95,11 +95,11 @@ Yleisesti ottaen kontit ovat kevyempiä suorittaa kuin kokonaiset virtuaalikonee
 | Virtuaalikoneet | Kontit |
 | --- | --- |
 Raskaampi	| Kevyempi
-Rajattu suorituskyky |	Natiivi suorituskyky
 Virtuaalikone suorittaa oman käyttöjärjestelmänsä| Kontit jakavat yhden käyttöjärjestelmän
 Rautatason virtualisointi	|Käyttöjärjestelmätason virtualisointi
 Käynnistysaika < 30s	| Käynnistysaika < 2s
 Täysin eristetty, turvallisempi	| Prosessitason eristys, ei välttämättä niin turvallinen
+Vie enemmän levytilaa (>500mb) | Vie vain vähän levytilaa (>10mb)
 
 Täytyy myös ottaa huomioon että yleensä kontit ajetaan virtuaalikoneen päällä. 
 
@@ -141,7 +141,7 @@ Docker Compose on työkalu jonka avulla ajetaan useita Docker kontteja sisältä
 * Varmasti paljon muuta mitä ei tule mieleen
 
 # Tehtävä
-Tee demon kanssa harmoniassa toimiva mikropalvelu, esimerkiksi sellainen jolla käyttäjä voi kirjoittaa kommentteja blogikirjoituksen alle (tälle **EI OLE** UI:ta). Mikropalvelun pitäisi tarjota vähintään CREATE ja READ reitit, tallentaa dataa tietokantaan ja toimia täysin itsenäisesti. 
+Tee demon kanssa harmoniassa toimiva mikropalvelu, esimerkiksi sellainen jolla käyttäjä voi kirjoittaa kommentteja blogikirjoituksen alle (tälle **EI OLE** UI:ta). Mikropalvelun pitäisi tarjota vähintään CREATE ja READ reitit, tallentaa dataa tietokantaan ja toimia täysin itsenäisesti. Tärkeää ei ole mikropalvelun monimutkaisuus tai laajuus, vaan se että palvelu on järkevä ja suorittaa vain yhden tehtäväkokonaisuuden.
     
 Käytä haluamaasi ohjelmointikieltä ja tietokantapalvelua. 
 
