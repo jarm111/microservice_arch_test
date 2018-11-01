@@ -5,6 +5,23 @@ services:
     image: userservice
     build: .
     environment:
-      NODE_ENV: production
+      NODE_ENV: developement
     ports:
       - 777:777
+    depends_on:
+      - db
+    container_name: userservice
+
+  db:
+    image: mariadb
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+    ports:
+      - 3306:3306
+    container_name: mariadb
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
