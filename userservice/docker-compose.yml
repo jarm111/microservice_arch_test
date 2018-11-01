@@ -2,9 +2,9 @@ version: '3'
 
 services:
   mircroservice:
-    image: blogservice
+    image: userservice
     build: .
     environment:
       NODE_ENV: production
     ports:
-      - 888:888
+      - 777:777

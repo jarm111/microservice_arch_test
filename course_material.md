@@ -111,37 +111,38 @@ Dockerfile on tiedosto joka ohjeistaa Dockerille kuinka docker image tulee raken
 
 [Virallinen dokumentaatio](https://docs.docker.com/engine/reference/builder/)
 
-### docker build
+### docker build ja run 
+Applikaation saa pyörimään Dockerin sisälle näillä komennoilla
+
 #### Esimerkki
 * `sudo docker build -t blogservice .`
-    - Buildaa imagen
-    - Tägää sen "blogservice" nimellä
-    - . <- relatiivinen kansio jossa dockerfile sijaitsee 
-* `sudo docker run blogservice`
-    - Ajaa blogservice palvelun
+    - `build` Buildaa imagen
+    - `-t tägi` Tägää imagen valitsemallasi nimellä
+    - `.` <- Relatiivinen kansio jossa dockerfile sijaitsee 
+* `sudo docker run -p 888:888 blogservice`
+    - `run` Ajaa valitun palvelun
+    - `-p PORT:PORT` Reitittää dockerin portin ulospäin 
   
 ### .dockerignore
 .dockerignore tiedosto on rakenteeltaan ja toiminnaltaan kuten .gitignore. Siihen sisällytetään tiedostot ja kansiorakenteet joita ei haluta docker imageen mukaan. 
 
 [Virallinen dokumentaatio](https://docs.docker.com/engine/reference/builder/#dockerignore-file)
 ## Docker Compose 
-Lorem ipsum jne jne jne 
+Docker Compose on työkalu jonka avulla ajetaan useita Docker kontteja sisältäviä sovelluksia. 
+
+[Asennus ohjeet] (https://github.com/docker/compose/releases)
 
 [Virallinen dokumentaatio](https://docs.docker.com/compose/compose-file/)
 
 ## Mitä tässä **EI** käsitelty
-* Orkestraattori
-* Ja jotain muuta.
-
+* Orkestraattori (Kubernetes, Docker Swarm)
+* Varmasti paljon muuta mitä ei tule mieleen
 
 # Tehtävä
-Tee demon kanssa harmoniassa toimiva mikropalvelu, jolla käyttäjä voi kirjoittaa kommentteja blogikirjoituksen alle (tälle **EI OLE** UI:ta). Huomioi ratkaisuissasi että samaa mikropalvelua pitäisi voida tulevaisuudessa käyttää myös esimerkiksi käyttäjän kommentoimiseen.  Mikropalvelun pitäisi tarjota vähintään CREATE ja READ reitit, ja toimia täysin itsenäisesti. 
+Tee demon kanssa harmoniassa toimiva mikropalvelu, esimerkiksi sellainen jolla käyttäjä voi kirjoittaa kommentteja blogikirjoituksen alle (tälle **EI OLE** UI:ta). Mikropalvelun pitäisi tarjota vähintään CREATE ja READ reitit, tallentaa dataa tietokantaan ja toimia täysin itsenäisesti. 
+    
+Käytä haluamaasi ohjelmointikieltä ja tietokantapalvelua. 
 
-* Blogin kommentointi
-    * GET `/api/blog/comment`
-    * POST `/api/blog/:id/comment`
-  
-Käytä haluamaasi ohjelmointikieltä ja tietokantapalvelua.
-
-Saatuasi mikropalvelusi toimimaan, tee sille **Dockerfile** tiedosto ja buildaa siitä **docker image**.
-Tämän jälkeen lisää se gatewayservicen 
+Saatuasi mikropalvelusi toimimaan 
+A) Tee sille **Dockerfile** ja kommentoi se, sekä buildaa **docker image**.
+B) Tämän jälkeen lisää se gatewayservicen `gateway.config.yml` tiedostoon niin, että voit hakea palvelun resursseja gatewayn kautta. 

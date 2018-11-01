@@ -2,12 +2,12 @@ version: '3'
 
 services:
   mircroservice:
-    image: blogservice
+    image: userservice
     build: .
     environment:
-      NODE_ENV: development
+      NODE_ENV: developement
     ports:
-      - 888:888
+      - 777:777
       - 9229:9229
     ## set your startup file here
     command: node --inspect index.js

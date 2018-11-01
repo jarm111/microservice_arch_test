@@ -1,5 +1,5 @@
 const model = require('../models/index'),
-	bcrypt = require('bcrypt'),
+	bcrypt = require('bcryptjs'),
 	path = require('path'),
 	crypto = require('crypto'),
 	jwt = require('jsonwebtoken'),
