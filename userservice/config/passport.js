@@ -1,14 +1,14 @@
-const passport = require('passport'),
-	config = require('./config');
-	JwtStrategy = require('passport-jwt').Strategy,
-	ExtractJwt = require('passport-jwt').ExtractJwt,
-	model = require('../models/index'),
-	User = model.users;
+const passport = require('passport');
+const	config = require('./config');
+const	JwtStrategy = require('passport-jwt').Strategy;
+const	ExtractJwt = require('passport-jwt').ExtractJwt;
+const	model = require('../models/index');
+const	User = model.users;
 
 const jwtOpts = {
 	jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
 	secretOrKey: config.main.jwt_secret
-}
+};
 
 const jwtLogin = new JwtStrategy(jwtOpts, (payload, done) => {
 	User.findOne({

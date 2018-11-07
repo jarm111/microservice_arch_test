@@ -1,16 +1,17 @@
 #!/usr/bin/env nodejs
+/* eslint-disable */
 
-const express = require('express'),
-	dotenv = require('dotenv').config(),
-	config = require('./config/config'),
-	bodyParser = require('body-parser'),
-	bcrypt = require('bcryptjs'),
-	router = require('./router/router'),
-	models = require('./models'),
-	http = require('http'),
-	cors = require('cors'),
-	app = express(),
-	path = require('path');
+const express = require('express');
+const	dotenv = require('dotenv').config();
+const	config = require('./config/config');
+const	bodyParser = require('body-parser');
+const	bcrypt = require('bcryptjs');
+const	router = require('./router/router');
+const	models = require('./models');
+const	http = require('http');
+const	cors = require('cors');
+const	app = express();
+const	path = require('path');
 
 process.env.NODE_ENV = "developement"
 

@@ -1,15 +1,16 @@
 #!/usr/bin/env nodejs
+/* eslint-disable */
 
-const express = require('express'),
-	dotenv = require('dotenv').config(),
-	config = require('./config/config'),
-	bodyParser = require('body-parser'),
-	router = require('./router/router'),
-	http = require('http'),
-	cors = require('cors'),
-	app = express()
-	mongoose = require('mongoose');
-process.env.NODE_ENV = "developement"
+const 	express = require('express');
+const	dotenv = require('dotenv').config();
+const	config = require('./config/config');
+const	bodyParser = require('body-parser');
+const	router = require('./router/router');
+const	http = require('http');
+const	cors = require('cors');
+const	app = express();
+const	mongoose = require('mongoose');
+process.env.NODE_ENV = 'developement';
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -20,12 +21,12 @@ mongoose.Promise = global.Promise;
 console.log(config.database.url)
 // Connecting to the database
 mongoose.connect(config.database.url, {
-    useNewUrlParser: true
+	useNewUrlParser: true
 }).then(() => {
-    console.log("Successfully connected to the database");    
+	console.log('Successfully connected to the database');    
 }).catch(err => {
-    console.log('Could not connect to the database. Exiting now...', err);
-    process.exit();
+	console.log('Could not connect to the database. Exiting now...', err);
+	process.exit();
 });
 
 const server = http.createServer(app);
