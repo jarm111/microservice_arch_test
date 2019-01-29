@@ -51,8 +51,7 @@ exports.getBlog = (req, res, next) => {
 
 exports.getDefault = (req, res, next) => {
     const data = {
-        data1: 'data',
-        data: 'opettele koodaamaa'
+        sanitycheck: 'check',
     };
     res.send(data);
 }

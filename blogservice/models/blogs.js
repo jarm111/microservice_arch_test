@@ -28,6 +28,4 @@ const blogpostSchema = new mongoose.Schema({
     }
 });
 
-
-//exporttaa "schema"
 module.exports = mongoose.model('blogpost', blogpostSchema);
