@@ -12,7 +12,7 @@ NodeJS and MongoDB (Docker-CE)
 
 ### Regular installation
 
-1. Clone the repository 
+1. Clone the repository
 2. install NodeJS and database software of your choosing.  
 3. Create .env file
     * PORT=

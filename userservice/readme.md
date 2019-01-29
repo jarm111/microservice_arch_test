@@ -15,39 +15,24 @@ NodeJS and MariaDB (Docker-CE, Docker-Compose)
 1. Clone the repository
 2. install NodeJS and database software of your choosing (MariaDB/MySQL).  
 3. Create .env file
-<<<<<<< HEAD
-* It looks like this
-  * DB_USER=root
-  * DB_PASSWORD=example
-  * DB_DATABASE=userservice
-  * DB_HOST=mariadb
-  * DB_DIALECT=mysql
-  * PORT=1234
-  * JWT_SECRET=salaisuus
-1. Open up a Powershell/CMD/Bash/Whatever and do `npm install`
-2. Run SQL script from ./setup
-3. Run the services with Node
-4. Be happy
-=======
-  * DB_USER=
-    * Database user
-  * DB_PASSWORD=
-    * Database password
-  * DB_DATABASE=
-    * Database name
-  * DB_HOST=
-    * Database host
-    * If using docker, set this to `mariadb`
-  * DB_DIALECT=mysql
-  * PORT=
-    * Port which the the application will bind itself to
-  * JWT_SECRET=
-    * String for JWT creation
+   * DB_USER=
+      * Database user
+   * DB_PASSWORD=
+      * Database password
+   * DB_DATABASE=
+      * Database name
+   * DB_HOST=
+      * Database host
+      * If using docker, set this to `mariadb`
+   * DB_DIALECT=mysql
+   * PORT=
+     * Port which the the application will bind itself to
+   * JWT_SECRET=
+     * String for JWT creation
 4. Open up a Powershell/CMD/Bash/Whatever and do `npm install`
 5. Run SQL script from ./setup
-6. Run the services with Node 
-7. Be happy 
->>>>>>> 248f60d5cf698a6835b5c556b0d5545dc400ae01
+6. Run the services with Node
+7. Be happy
 
 ### Docker image
 
@@ -57,63 +42,39 @@ NodeJS and MariaDB (Docker-CE, Docker-Compose)
 7. Be happy
 
 ## API documentation
-<<<<<<< HEAD
 
-* *< implies url like for example "localhost:1234"
-* Returns JSON data
-  * `_id` mongodb default id
-  * `created_at` datetime
-  * `title` String
-  * `post` String
-  * `userID` String
-  * `user` String
-* GET `*/api/blog`
-  * Get all blogs
-  * Returns array of blogs
-* GET `*/api/blog/:id`
-  * Get a blog by `_id`
-  * Returns single blog
-* POST `*/api/blog`
-  * expects json body 
-    * `title`  
-    * `post`,
-    * `userID`
-    * `user` displayname (nickname, full name or something like that)
-    * Posts a blog
-=======
 * *< implies url like for example `localhost:1234`
-* Example: `localhost:1234/api/auth/register`   
+* Example: `localhost:1234/api/auth/register`
 * Returns JSON data object: `user` like this
-    * `customer_id` user id 
-    * `firstName` datetime
-    * `lastName` String
-    * `email` String
+  * `customer_id` user id
+  * `firstName` datetime
+  * `lastName` String
+  * `email` String
 * POST `*/api/auth/register`
-    * Expects json body 
-        * `firstName`    
-        * `lastName`
-        * `email`
-        * `password`
-    * Registers user
-    * Returns jwtToken and `user` 
+  * Expects json body
+    * `firstName`
+    * `lastName`
+    * `email`
+    * `password`
+  * Registers user
+  * Returns jwtToken and `user`
 * POST `*/api/auth/login`
-    * Expects json body 
-        * `email`
-        * `password`
-    * Returns jwtToken and `user`
+  * Expects json body
+    * `email`
+    * `password`
+  * Returns jwtToken and `user`
 * GET `*/api/user/:id`
-    * Get a user by `customer_id`
-    * Returns single user object
-* PATCH `*/api/user/:id` 
-    * Expects json body with data you want updated 
-        * `firstName`    
-        * `lastName`
-        * `email`
-        * `password`
+  * Get a user by `customer_id`
+  * Returns single user object
+* PATCH `*/api/user/:id`
+  * Expects json body with data you want updated
+    * `firstName`
+    * `lastName`
+    * `email`
+    * `password`
     * Returns new `user`
 * DELETE `*/api/user/:id`  
-    * Deletes users by `customer_id`
->>>>>>> 248f60d5cf698a6835b5c556b0d5545dc400ae01
+  * Deletes users by `customer_id`
 
 ## Problems
 
