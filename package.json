@@ -3,14 +3,18 @@
     "name": "scriptitesti",
     "version": "1.0.0",
     "description": "Skriptataan",
+
     "scripts": {
         "install_all": "npm run-script install_blog && npm run-script install_front && npm run-script install_gateway && npm run-script install_user",
         "install_blog": "cd ./blogservice && npm install",
         "install_front": "cd ./frontend && npm install",
         "install_gateway": "cd ./gatewayservice && npm install",
-        "install_user": "cd ./userservice && npm install"
+        "install_user": "cd ./userservice && npm install",
+
+        "start_all_services": "cd ./blogservice/ && node index.js & cd ./gatewayservice && node index.js &  cd ./userservice && node index.js"
       },
-        "keywords": [
+    
+      "keywords": [
       "microservice",
       "users",
       "end",

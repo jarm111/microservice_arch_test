@@ -18,4 +18,4 @@ https://www.dropbox.com/s/36xa3yty4uiexq7/Dockermikropalvelut.pdf?dl=1
 
 ## Convenience script
 
-Install all dependencies by running `npm run-script install_all` at project root
+Install all dependencies by running `npm run-script install_all` at project root if you want to test the microservices without docker.
