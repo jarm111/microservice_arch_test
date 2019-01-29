@@ -3,7 +3,7 @@
 # Mikropalvelut ja Docker
 
 # Mikropalvelut webapplikaatioissa
-
+[Tunnilla näytetty presis](https://www.dropbox.com/s/36xa3yty4uiexq7/Dockermikropalvelut.pdf?dl=1)
 ## Service-oriented architecture  
 SOA (Service-oriented architecture) eli palvelukeskeinen arkkitehtuuri on ohjelmistotekniikassa käytetty arkkitehtuuritason suunnittelutapa, jolla eri tietojärjestelmien toiminnot ja prosessit on suunniteltu toimimaan itsenäisinä, avoimina ja joustavina palveluina. Näitä palveluita tulisi pystyä aina käyttämään avoimien standardien rajapintojen kautta. 
 
@@ -61,7 +61,7 @@ Usein käytetty malli jossa kutsut voidaan tehdä suoraan palvelulle, ja jokin p
 * Laajat sovellukset jotka vaativat nopean julkaisusyklin
 * Monimutkaiset ja skaalautumista vaativat sovellukset 
 * Organisaatio joka koostuu pienistä kehittäjätiimeistä 
-* Sovelluksessa on selkeitä yksittäisiä osia jotka vaativat spesifejä teknologoita joita ei muualla tarvita 
+* Sovelluksessa on selkeitä yksittäisiä osia jotka vaativat spesifejä teknologiota joita ei muualla tarvita 
 
 ### Milloin mikropalveluita ei kannata käyttää
 * Pieni kehitystiimi
@@ -83,6 +83,8 @@ Mikropalveluarkkitehtuuri on laaja ja syvä suo jossa on paljon opittavaa. Kaikk
 
 # Docker
 Docker on ohjelmisto jonka avulla voit virtualisoida ohjelmistoja käyttöjärjestelmätasolla. Dockerin avulla voit ajaa eri sovelluksia "konteissa", jotka toimivat käyttöjärjestelmän käyttäjäavaruudessa. Konteissa toimivat ohjelmat eivät näe muita ohjelmia ja näkevät pelkästään kullekkin kontille määritellyt resurssit. Kontteja käytetään usein mikropalveluiden yhteydessä.
+
+Kontin sisältö koostuu koko ajon aikaisesta ympäristöstä. Konttiin pakataan applikaatio, kaikki sen riippuvuudet, kirjastot, binäärit, sekä konfiguraatiotiedostot. 
 
 #### Virtualisointi vs säiliöinti
 ![Säiliöinti vs virtualisointi](https://blog.netapp.com/wp-content/uploads/2016/03/Screen-Shot-2018-03-20-at-9.24.09-AM-935x500.png)

@@ -1,37 +1,34 @@
 const model = require('../models/index'),
 	bcrypt = require('bcryptjs'),
-	path = require('path'),
-	crypto = require('crypto'),
 	jwt = require('jsonwebtoken'),
 	config = require('../config/config'),
-	async = require('async'),
-	User = model.users
+	User = model.users;
 
 function generateJwt(user) {
 	return jwt.sign(user, config.main.jwt_secret);
-};
+}
 
 function setUserInfo(request) {
 	return {
 		_id: request.customer_id,
 		email: request.email
-	}
-};
-
-const checkPassword = function (candidatePassword, password) {
-	return bcrypt.compareSync(candidatePassword, password)
-};
+	};
+}
 
 function hashPassword(password) {
 	return bcrypt.hashSync(password, 10, null);
+}
+
+const checkPassword = function (candidatePassword, password) {
+	return bcrypt.compareSync(candidatePassword, password);
 };
 
-exports.localRegister = (req, res, next) => {
+exports.localRegister = (req, res) => {
 	let firstName = req.body.firstName,
 		lastName = req.body.lastName,
 		email = req.body.email,
-		password = req.body.password
-	console.log(req.body)
+		password = req.body.password;
+	console.log(req.body);
 	User.findOne({
 		where: { email: email }
 	})
@@ -68,27 +65,26 @@ exports.localRegister = (req, res, next) => {
 		});
 };
 
-exports.localLogin = (req, res, next) => {
+exports.localLogin = (req, res) => {
 	User.findOne({
 		where: { email: req.body.email }
 	})
-	.then((user) => {
-		if (!user) return res.status(404).json({ success: false, message: 'Käyttäjää ei löytynyt' });
-		if (!checkPassword(req.body.password, user.dataValues.password)) return res.status(404).json({ success: false, message: 'Salasanat eivät täsmää' });
-		const userInfo = setUserInfo(user.dataValues);
-		res.status(200).json({
-			message: 'Successfully logged in',
-			token: generateJwt(userInfo),
-			_id: userInfo._id,
-			firstName: user.firstName,
-			lastName: user.lastName,
-			email: user.email
+		.then((user) => {
+			if (!user) return res.status(404).json({ success: false, message: 'Käyttäjää ei löytynyt' });
+			if (!checkPassword(req.body.password, user.dataValues.password)) return res.status(404).json({ success: false, message: 'Salasanat eivät täsmää' });
+			const userInfo = setUserInfo(user.dataValues);
+			res.status(200).json({
+				message: 'Successfully logged in',
+				token: generateJwt(userInfo),
+				_id: userInfo._id,
+				firstName: user.firstName,
+				lastName: user.lastName,
+				email: user.email
+			});
+		})
+		.catch((err) => {
+			console.log('localLogin failed: ' + err.stack);
 		});
-	})
-	.catch((err) => {
-		console.log('localLogin failed: ' + err.stack);
-	});
-	
 };
 
 

@@ -1,9 +1,7 @@
-const express = require('express'),
-	app = express(),
-	passport = require('passport'),
-	passportService = require('../config/passport'),
-	AuthController = require('../controllers/authcontroller'),
-	UserController = require('../controllers/usercontroller')
+const express = require('express');
+const	passport = require('passport');
+const	AuthController = require('../controllers/authcontroller');
+const	UserController = require('../controllers/usercontroller');
 
 module.exports = (app) => {
 
@@ -23,4 +21,4 @@ module.exports = (app) => {
 	router.get('/user/:id', jwtAuth, UserController.getUser);
 	router.patch('/user/:id', jwtAuth, UserController.updateUser);
 	router.delete('/user/:id', jwtAuth, UserController.deleteUser);
-}
+};
