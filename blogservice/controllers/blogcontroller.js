@@ -47,19 +47,9 @@ exports.getBlog = (req, res) => {
 		});
 };
 
-<<<<<<< HEAD
 exports.getDefault = (req, res, next) => {
     const data = {
         sanitycheck: 'check',
     };
     res.send(data);
 }
-=======
-exports.getDefault = (req, res) => {
-	const data = {
-		data1: 'data',
-		data: 'opettele koodaamaa'
-	};
-	res.send(data);
-};
->>>>>>> 248f60d5cf698a6835b5c556b0d5545dc400ae01
