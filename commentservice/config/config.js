@@ -1,5 +1,6 @@
 /* globals process*/
 
 module.exports = {
-  port: 8130,
+  port: process.env.PORT,
+  dbUri: process.env.DB_URI
 };

@@ -1,8 +1,11 @@
 require('dotenv').config();
 const express = require('express');
 const app = express();
-const {port} = require('./config/config');
+var mongoose = require('mongoose');
+const {port, dbUri} = require('./config/config');
 
-app.get('/', (req, res) => res.send('Hello World!'));
+mongoose.connect(dbUri, {useNewUrlParser: true});
 
-app.listen(port, () => console.log(`Example app listening on port ${port}!`));
+app.get('/', (req, res) => res.send('Comment Service api'));
+
+app.listen(port, () => console.log(`Comment Service listening on port ${port}!`));
