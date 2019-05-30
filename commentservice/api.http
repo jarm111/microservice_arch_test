@@ -1,7 +1,19 @@
 @hostname = localhost
 @port = 8130
 @host = {{hostname}}:{{port}}
+@contentType = application/json
 
-### Root
+### Home
 
 GET http://{{host}}/
+
+### Post comment
+
+POST http://{{host}}/api/comment/
+Content-Type: {{contentType}}
+
+{
+  "blogId": "asdf1234",
+  "authorName": "Hemuli",
+  "content": "Testi-kommentti 123"
+}
