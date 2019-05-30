@@ -11,5 +11,8 @@
     "comments"
   ],
   "author": "jarm111",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
