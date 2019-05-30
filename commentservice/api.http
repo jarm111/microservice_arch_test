@@ -1,0 +1,7 @@
+@hostname = localhost
+@port = 8130
+@host = {{hostname}}:{{port}}
+
+### Root
+
+GET http://{{host}}/
