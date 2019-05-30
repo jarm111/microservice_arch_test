@@ -1,0 +1,15 @@
+{
+  "name": "commentservice",
+  "version": "1.0.0",
+  "description": "A microservice for managing blog comments",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "microservice",
+    "comments"
+  ],
+  "author": "jarm111",
+  "license": "ISC"
+}
