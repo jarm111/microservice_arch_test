@@ -1,5 +1,6 @@
 http:
-  port: 3000
+  port: 8050
+  hostname: localhost
 admin:
   port: 9876
   hostname: localhost
@@ -14,9 +15,9 @@ apiEndpoints:
 serviceEndpoints:
   blogservice:
     urls: 
-    - 'http://localhost:1235/'
+    - 'http://localhost:8110/'
   userservice: 
-    url: 'http://localhost:1234/'
+    url: 'http://localhost:8120/'
 
 policies:
   - basic-auth
