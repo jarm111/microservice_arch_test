@@ -2,6 +2,7 @@
 @port = 8130
 @host = {{hostname}}:{{port}}
 @contentType = application/json
+@blogId = asdf1234
 
 ### Home
 
@@ -13,7 +14,18 @@ POST http://{{host}}/api/comment/
 Content-Type: {{contentType}}
 
 {
-  "blogId": "asdf1234",
+  "blogId": "{{blogId}}",
+  "authorName": "Hemuli",
+  "content": "Testi-kommentti 123"
+}
+
+### Get comment by blogId
+
+GET http://{{host}}/api/comment/
+Content-Type: {{contentType}}
+
+{
+  "blogId": "{{blogId}}",
   "authorName": "Hemuli",
   "content": "Testi-kommentti 123"
 }

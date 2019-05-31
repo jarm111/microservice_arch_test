@@ -13,3 +13,11 @@ exports.postComment = (req, res) => {
     .then(data => res.status(200).send(data))
     .catch(err => res.status(500).send(err.message));
 };
+
+exports.getComment = (req, res) => {
+  const {blogId} = req.body;
+
+  Comment.find({blogId})
+    .then(data => res.status(200).send(data))
+    .catch(err => res.status(500).send(err.message));
+};
