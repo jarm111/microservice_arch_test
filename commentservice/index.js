@@ -13,6 +13,11 @@ app.use(cors());
 app.use('/api', router);
 app.get('/', (req, res) => res.send('Comment Service api'));
 
-mongoose.connect(dbUri, {useNewUrlParser: true});
+mongoose.connect(dbUri, {useNewUrlParser: true}).then(() => {
+  console.log('Successfully connected to the database');    
+}).catch(err => {
+  console.error('Could not connect to the database. Exiting now...', err);
+  process.exit();
+});
 
 app.listen(port, () => console.log(`Comment Service listening on port ${port}!`));
