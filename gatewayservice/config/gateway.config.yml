@@ -12,12 +12,18 @@ apiEndpoints:
   userAPI: 
     host: localhost
     paths: ['/api/user','/api/user/*', '/api/auth/*','/api/auth']
+  commentAPI:
+    host: localhost
+    paths: ['/api/comment','/api/comment/*']
 serviceEndpoints:
   blogservice:
     urls: 
     - 'http://localhost:8110/'
   userservice: 
     url: 'http://localhost:8120/'
+commentservice:
+    urls: 
+    - 'http://localhost:8130/'
 
 policies:
   - basic-auth
@@ -53,4 +59,17 @@ pipelines:
       - proxy:
           - action:
               serviceEndpoint: userservice 
+              changeOrigin: true
+
+  comments:
+    apiEndpoints:
+      - commentAPI
+    policies:
+      - log:
+        - action:
+            message: ${req.method} ${req.originalUrl}
+
+      - proxy:
+          - action:
+              serviceEndpoint: commentservice 
               changeOrigin: true
