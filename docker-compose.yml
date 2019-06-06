@@ -1,0 +1,42 @@
+# Docker compose file for Microservice Archtitecture Test
+# Doesn't include gateway service yet
+
+version: "3"
+
+services:
+
+  mongodb:
+    image: mongo:latest
+    ports: 
+      - "27017:27017"
+  
+  madiadb:
+    image: mariadb:latest
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=my-secret-pw
+      - MYSQL_USER=userservice
+      - MYSQL_DATABASE=userservicedb
+      - MYSQL_PASSWORD=password
+
+  blogservice:
+    build: ./blogservice
+    ports: 
+      - "8110:8110"
+    depends_on:
+      - mongodb
+
+  userservice:
+    build: ./userservice
+    ports: 
+      - "8120:8120"
+    depends_on:
+      - madiadb
+  
+  commentservice:
+    build: ./commentservice
+    ports: 
+      - "8130:8130"
+    depends_on:
+      - mongodb
